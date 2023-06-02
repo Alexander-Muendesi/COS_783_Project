@@ -20,8 +20,8 @@ def get_synonyms(word):
     return synonyms
 
 
-if __name__ == "__main__":
-    word = input("Enter a word: ")
-    synonyms = get_synonyms(word)
-    print("Synonyms:", synonyms)
+# if __name__ == "__main__":
+#     word = input("Enter a word: ")
+#     synonyms = get_synonyms(word)
+#     print("Synonyms:", synonyms)
 

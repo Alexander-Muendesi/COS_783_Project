@@ -41,17 +41,18 @@ class KeywordSearch:
         
         return entities
 
-    def enhancedKeywordSearch(self,query):
+    def enhancedKeywordSearch(self,query,oneWord):
         #search using word embeddings
-        # queryVector = self.word2vecModel.wv[query]
-        # similarWords = self.word2vecModel.wv.similar_by_vector(queryVector)
+        similarWords = ""
+        if oneWord:
+            queryVector = self.word2vecModel.wv[query]
+            similarWords = self.word2vecModel.wv.similar_by_vector(queryVector)
 
         #search using topic modelling
         queryBow = self.dictionary.doc2bow(query.lower().split())
         lda_model = models.LdaModel(self.corpus, num_topics=5, id2word=self.dictionary, passes=10)
         topicDistribution = lda_model.get_document_topics(queryBow)
         top_topics = sorted(topicDistribution, key=lambda x: x[1], reverse=True)[:3]
-        print(top_topics)
     
 
         #search using entity linking
@@ -61,8 +62,8 @@ class KeywordSearch:
     
         #combine the results from each step
         enhanced_results = []
-        # enhanced_results.extend(similarWords)
-        enhanced_results.extend(top_topics)
+        enhanced_results.extend(similarWords)
+        # enhanced_results.extend(top_topics)
         enhanced_results.extend(entityMatches)
 
         return enhanced_results

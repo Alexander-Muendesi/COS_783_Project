@@ -9,6 +9,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 
 def analyze_sentiment(sentence):
+    print(sentence)
     sid = SentimentIntensityAnalyzer()
     sentiment_scores = sid.polarity_scores(sentence)
     
@@ -21,6 +22,6 @@ def analyze_sentiment(sentence):
         return "Neutral"
 
 
-sentence = input("Enter a sentence: ")
-sentiment = analyze_sentiment(sentence)
-print("Sentiment:", sentiment)
+# sentence = input("Enter a sentence: ")
+# sentiment = analyze_sentiment(sentence)
+# print("Sentiment:", sentiment)
