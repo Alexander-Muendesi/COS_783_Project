@@ -62,7 +62,8 @@ class KeywordSearch:
     
         #combine the results from each step
         enhanced_results = []
-        enhanced_results.extend(similarWords)
+        if oneWord:
+            enhanced_results.extend(similarWords)
         # enhanced_results.extend(top_topics)
         enhanced_results.extend(entityMatches)
 
