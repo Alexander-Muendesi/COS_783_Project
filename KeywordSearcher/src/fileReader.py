@@ -24,9 +24,9 @@ class FileReader:
             preprocessed_text = self.textProcessor.preprocess_text(message)
             preprocessed_emails.append(preprocessed_text)
             # print(preprocessed_text)
-            if count % 100 == 0:
-                print(count)
-            # print(count)
+            # if count % 100 == 0:
+            #     print(count)
+            # # print(count)
         return preprocessed_emails
     
     def processHateSpeech(self):
