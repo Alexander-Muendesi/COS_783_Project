@@ -1,3 +1,5 @@
+# Project Description
+This project aimed to created a searching tool that would help forensic examiners be able to search efficiently through data.
 # Project Setup Instructions
 
 This project makes use of a virtual environment.

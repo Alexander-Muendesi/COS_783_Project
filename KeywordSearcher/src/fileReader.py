@@ -14,7 +14,7 @@ class FileReader:
         #preprocess each email in the data set
         count = 0
         for email in enron_emails['message']:
-            if count > 5000:
+            if count > 1000:
                 break
             count += 1
             #extract the message content from the email
